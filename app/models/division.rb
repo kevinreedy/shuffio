@@ -3,6 +3,8 @@ class Division < ApplicationRecord
   has_and_belongs_to_many :teams
   has_many :matches
 
+  delegate :location, to: :season
+
   def match_time_for_week(week)
     day = season.start_date
     if day_of_week
@@ -14,7 +16,7 @@ class Division < ApplicationRecord
       day += 1.week
     end
 
-    Time.find_zone('America/Chicago').parse("#{day} #{time}")
+    Time.find_zone('America/New_York').parse("#{day} #{time}")
   end
 
   def matches_for_week(week)
@@ -93,9 +95,9 @@ class Division < ApplicationRecord
         row << nil
         row << m.home_team.name
         row << m.away_team.name
-        row << m.time.in_time_zone('America/Chicago').strftime('%-m/%-d/%Y')
-        row << m.time.in_time_zone('America/Chicago').strftime('%H:%M')
-        row << (m.time + 1.hour).in_time_zone('America/Chicago').strftime('%H:%M')
+        row << m.time.in_time_zone('America/New_York').strftime('%-m/%-d/%Y')
+        row << m.time.in_time_zone('America/New_York').strftime('%H:%M')
+        row << (m.time + 1.hour).in_time_zone('America/New_York').strftime('%H:%M')
         row << 'the royal palms shuffleboard club'
         row << m.court.name
         row << 'REGULAR_SEASON'
@@ -175,7 +177,7 @@ class Division < ApplicationRecord
   end
 
   # Returns array of Matches, but doesn't save them
-  def setup_matches(location = Location.find_by(name: 'Royal Palms Chicago'))
+  def setup_matches(location = Location.find_by(name: 'Royal Palms Brooklyn'))
     output_matches = []
 
     # Sort teams into away and home via snake order
@@ -256,6 +258,99 @@ class Division < ApplicationRecord
         # Leave room for manual info
         3.times { csv << [] }
       end
+    end
+  end
+
+  def league_apps_schedule_uri
+    return nil if league_apps_site_id.nil?
+    return nil if league_apps_program_id.nil?
+
+    "https://public.leagueapps.io/v1/sites/#{league_apps_site_id}/programs/#{league_apps_program_id}/schedule"
+  end
+
+  def league_apps_matches
+    raise 'league_apps_site_id and league_apps_program_id required' if league_apps_schedule_uri.nil?
+
+    res = Faraday.get(league_apps_schedule_uri) do |req|
+      req.headers['la-api-key'] = ENV['LEAGUEAPPS_API_KEY']
+    end
+
+    raise "Failed to connect to League Apps - #{res.body}" if res.status >= 400
+
+    JSON.parse(res.body)['games']
+  end
+
+  def league_apps_teams_uri
+    return nil if league_apps_site_id.nil?
+    return nil if league_apps_program_id.nil?
+
+    "https://public.leagueapps.io/v1/sites/#{league_apps_site_id}/programs/#{league_apps_program_id}/teams"
+  end
+
+  def league_apps_teams
+    raise 'league_apps_site_id and league_apps_program_id required' if league_apps_schedule_uri.nil?
+
+    res = Faraday.get(league_apps_teams_uri) do |req|
+      req.headers['la-api-key'] = ENV['LEAGUEAPPS_API_KEY']
+    end
+
+    raise "Failed to connect to League Apps - #{res.body}" if res.status >= 400
+
+    JSON.parse(res.body)
+  end
+
+  def import_league_apps_matches
+    league_apps_matches.each do |m|
+      # Skip if already imported
+      next if Match.find_by(league_apps_game_id: m['gameId'])
+
+      # Skip if both teams are TBD
+      next if m['team1'] == 'TBD' && m['team2'] == 'TBD'
+
+      away_team = Team.find_or_create_by(location: location, param_name: Team.param_name(m['team1'])) do |t|
+        t.name = m['team1']
+        t.captain = m['team1Id']
+      end
+
+      away_team.divisions << self unless teams.include?(away_team)
+
+      home_team = Team.find_or_create_by(location: location, param_name: Team.param_name(m['team2'])) do |t|
+        t.name = m['team2']
+        t.captain = m['team2Id']
+      end
+
+      home_team.divisions << self unless teams.include?(home_team)
+
+      court_name = "Court #{('%02d' % m['subLocationName'].split(/ /)[1].to_i)}"
+      court = location.courts.find_by(name: court_name)
+
+      raise 'Could not find court' unless court
+
+      time = Time.at(m['startTime'] / 1000)
+
+      Match.create!(
+        away_team: away_team,
+        home_team: home_team,
+        away_score: m['team1Score'] || 0,
+        home_score: m['team2Score'] || 0,
+        division: self,
+        time: time,
+        court: court,
+        league_apps_game_id: m['gameId']
+      )
+    end
+  end
+
+  def import_league_apps_teams
+    league_apps_teams.each do |la_t|
+      next if la_t['teamName'] == 'TBD'
+
+      new_team = Team.find_or_create_by(location: location, param_name: Team.param_name(la_t['teamName'])) do |t|
+        t.name = la_t['teamName']
+        t.captain = la_t['teamId']
+      end
+
+      new_team.divisions << self unless teams.include?(new_team)
     end
   end
 end

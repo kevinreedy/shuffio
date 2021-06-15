@@ -1,0 +1,107 @@
+league_apps_site_id,league_apps_program_id,season_name,season_start_date,division_name,division_day_of_week,division_time
+7020,46648,Spring 2015,2015-03-16,Monday Pilot,1,19:00
+7020,46649,Spring 2015,2015-03-16,Monday Cherry,1,20:00
+7020,46651,Spring 2015,2015-03-16,Monday Hammer,1,21:00
+7020,49995,Spring 2015,2015-03-16,Tuesday Pilot,2,19:00
+7020,49997,Spring 2015,2015-03-16,Tuesday Cherry,2,20:00
+7020,49998,Spring 2015,2015-03-16,Tuesday Hammer,2,21:00
+7020,56225,Summer 2015,2015-06-02,Tuesday Pilot,2,19:00
+7020,56226,Summer 2015,2015-06-02,Tuesday Cherry,2,20:00
+7020,56227,Summer 2015,2015-06-02,Tuesday Hammer,2,21:00
+7020,61745,Fall 2015,2015-09-14,Monday Pilot,1,19:00
+7020,61747,Fall 2015,2015-09-14,Monday Cherry,1,20:00
+7020,61748,Fall 2015,2015-09-14,Monday Hammer,1,21:00
+7020,61749,Fall 2015,2015-09-14,Tuesday Pilot,2,19:00
+7020,61750,Fall 2015,2015-09-14,Tuesday Cherry,2,20:00
+7020,61751,Fall 2015,2015-09-14,Tuesday Hammer,2,21:00
+7020,71684,Winter 2016,2016-01-11,Monday Pilot,1,19:00
+7020,71685,Winter 2016,2016-01-11,Monday Cherry,1,20:00
+7020,71686,Winter 2016,2016-01-11,Monday Hammer,1,21:00
+7020,71687,Winter 2016,2016-01-11,Tuesday Pilot,2,19:00
+7020,71688,Winter 2016,2016-01-11,Tuesday Cherry,2,20:00
+7020,71689,Winter 2016,2016-01-11,Tuesday Hammer,2,21:00
+7020,88259,Spring 2016,2016-03-21,Monday Pilot,1,19:00
+7020,88261,Spring 2016,2016-03-21,Monday Cherry,1,20:00
+7020,88262,Spring 2016,2016-03-21,Monday Hammer,1,21:00
+7020,88265,Spring 2016,2016-03-21,Tuesday Pilot,2,19:00
+7020,88264,Spring 2016,2016-03-21,Tuesday Cherry,2,20:00
+7020,88263,Spring 2016,2016-03-21,Tuesday Hammer,2,21:00
+7020,99519,Summer 2016,2016-06-07,Tuesday Pilot,2,19:00
+7020,99520,Summer 2016,2016-06-07,Tuesday Cherry,2,20:00
+7020,99521,Summer 2016,2016-06-07,Tuesday Hammer,2,21:00
+7020,119481,Fall 2016,2016-09-12,Monday Pilot,1,19:00
+7020,119484,Fall 2016,2016-09-12,Monday Cherry,1,20:00
+7020,119487,Fall 2016,2016-09-12,Monday Hammer,1,21:00
+7020,119496,Fall 2016,2016-09-12,Tuesday Pilot,2,19:00
+7020,119502,Fall 2016,2016-09-12,Tuesday Cherry,2,20:00
+7020,119505,Fall 2016,2016-09-12,Tuesday Hammer,2,21:00
+7020,201663,Winter 2017,2017-01-16,Monday Pilot,1,19:00
+7020,201666,Winter 2017,2017-01-16,Monday Cherry,1,20:00
+7020,201669,Winter 2017,2017-01-16,Monday Hammer,1,21:00
+7020,201672,Winter 2017,2017-01-16,Tuesday Pilot,2,19:00
+7020,201675,Winter 2017,2017-01-16,Tuesday Cherry,2,20:00
+7020,201678,Winter 2017,2017-01-16,Tuesday Hammer,2,21:00
+7020,286896,Spring 2017,2017-04-17,Monday Pilot,1,19:00
+7020,286899,Spring 2017,2017-04-17,Monday Cherry,1,20:00
+7020,286902,Spring 2017,2017-04-17,Monday Hammer,1,21:00
+7020,288123,Spring 2017,2017-04-17,Tuesday Pilot,2,19:00
+7020,288129,Spring 2017,2017-04-17,Tuesday Cherry,2,20:00
+7020,288132,Spring 2017,2017-04-17,Tuesday Hammer,2,21:00
+7020,359559,Fall 2017,2017-09-11,Monday Pilot,1,19:00
+7020,359562,Fall 2017,2017-09-11,Monday Cherry,1,20:00
+7020,359565,Fall 2017,2017-09-11,Monday Hammer,1,21:00
+7020,359568,Fall 2017,2017-09-11,Tuesday Pilot,2,19:00
+7020,359571,Fall 2017,2017-09-11,Tuesday Cherry,2,20:00
+7020,359574,Fall 2017,2017-09-11,Tuesday Hammer,2,21:00
+7020,503553,Winter 2018,2018-01-15,Monday Pilot,1,19:00
+7020,503556,Winter 2018,2018-01-15,Monday Cherry,1,20:00
+7020,503559,Winter 2018,2018-01-15,Monday Hammer,1,21:00
+7020,503562,Winter 2018,2018-01-15,Tuesday Pilot,2,19:00
+7020,503565,Winter 2018,2018-01-15,Tuesday Cherry,2,20:00
+7020,503568,Winter 2018,2018-01-15,Tuesday Hammer,2,21:00
+7020,598314,Spring 2018,2018-04-02,Monday Pilot,1,19:00
+7020,598317,Spring 2018,2018-04-02,Monday Cherry,1,20:00
+7020,598320,Spring 2018,2018-04-02,Monday Hammer,1,21:00
+7020,598389,Spring 2018,2018-04-02,Tuesday Pilot,2,19:00
+7020,598392,Spring 2018,2018-04-02,Tuesday Cherry,2,20:00
+7020,598395,Spring 2018,2018-04-02,Tuesday Hammer,2,21:00
+7020,687316,Fall 2018,2018-09-10,Monday Pilot,1,19:00
+7020,687325,Fall 2018,2018-09-10,Monday Cherry,1,20:00
+7020,687328,Fall 2018,2018-09-10,Monday Hammer,1,21:00
+7020,687331,Fall 2018,2018-09-10,Tuesday Pilot,2,19:00
+7020,687334,Fall 2018,2018-09-10,Tuesday Cherry,2,20:00
+7020,687337,Fall 2018,2018-09-10,Tuesday Hammer,2,21:00
+7020,885793,Winter 2019,2019-01-14,Monday Pilot,1,19:00
+7020,885796,Winter 2019,2019-01-14,Monday Cherry,1,20:00
+7020,885799,Winter 2019,2019-01-14,Monday Hammer,1,21:00
+7020,885829,Winter 2019,2019-01-14,Tuesday Pilot,2,19:00
+7020,885835,Winter 2019,2019-01-14,Tuesday Cherry,2,20:00
+7020,885838,Winter 2019,2019-01-14,Tuesday Hammer,2,21:00
+7020,1039207,Spring 2019,2019-04-01,Monday Pilot,1,19:00
+7020,1039210,Spring 2019,2019-04-01,Monday Cherry,1,20:00
+7020,1039213,Spring 2019,2019-04-01,Monday Hammer,1,21:00
+7020,1039216,Spring 2019,2019-04-01,Tuesday Pilot,2,19:00
+7020,1039219,Spring 2019,2019-04-01,Tuesday Cherry,2,20:00
+7020,1039222,Spring 2019,2019-04-01,Tuesday Hammer,2,21:00
+7020,1177042,Fall 2019,2019-09-16,Monday Pilot,1,19:00
+7020,1177048,Fall 2019,2019-09-16,Monday Cherry,1,20:00
+7020,1177054,Fall 2019,2019-09-16,Monday Hammer,1,21:00
+7020,1177060,Fall 2019,2019-09-16,Tuesday Pilot,2,19:00
+7020,1177063,Fall 2019,2019-09-16,Tuesday Cherry,2,20:00
+7020,1177066,Fall 2019,2019-09-16,Tuesday Hammer,2,21:00
+7020,1406305,Winter 2020,2020-01-20,Monday Pilot,1,19:00
+7020,1406308,Winter 2020,2020-01-20,Monday Cherry,1,20:00
+7020,1406311,Winter 2020,2020-01-20,Monday Hammer,1,21:00
+7020,1406314,Winter 2020,2020-01-20,Tuesday Pilot,2,19:00
+7020,1406317,Winter 2020,2020-01-20,Tuesday Cherry,2,20:00
+7020,1406341,Winter 2020,2020-01-20,Tuesday Hammer,2,21:00
+7020,2179435,Brooklyn Mini-Season #1,2021-03-22,Monday Early,1,18:30
+7020,2179657,Brooklyn Mini-Season #1,2021-03-22,Monday Late,1,20:30
+7020,2180173,Brooklyn Mini-Season #1,2021-03-23,Tuesday Early,2,18:30
+7020,2180191,Brooklyn Mini-Season #1,2021-03-23,Tuesday Late,2,20:30
+7020,2269213,Brooklyn Mini-Season #2,2021-04-26,Monday Early,1,18:30
+7020,2269252,Brooklyn Mini-Season #2,2021-04-26,Monday Late,1,20:30
+7020,2269258,Brooklyn Mini-Season #2,2021-04-27,Tuesday Early,2,18:30
+7020,2269261,Brooklyn Mini-Season #2,2021-04-27,Tuesday Late,2,20:30
+7020,2269267,Brooklyn Mini-Season #2,2021-04-28,Wednesday Early,3,18:30
+7020,2269270,Brooklyn Mini-Season #2,2021-04-28,Wednesday Late,3,20:30

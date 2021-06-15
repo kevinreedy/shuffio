@@ -48,6 +48,9 @@
         <div class="dummy-<%= rank_widths[:name] %>"></div>
         <div class="in board board-name<%= ' champion' if t[:team].champion? %>">
           <%= link_to t[:team].display_name, team_path(t[:team]) %>
+          <% if t[:team].location == Location.find_by(name: 'Royal Palms Chicago') %>
+            <img src="https://design.chicago.gov/assets/img/chicago.gov-logo.png" height="32">
+          <% end %>
         </div>
       </div>
 

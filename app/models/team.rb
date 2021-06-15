@@ -1,9 +1,11 @@
 class Team < ApplicationRecord
   after_create :set_default_elo
+  after_create :set_param_name
 
   has_and_belongs_to_many :divisions
   has_many :seasons, through: :divisions
   has_many :championships, class_name: 'Season', foreign_key: 'champion_id'
+  belongs_to :location, optional: true
 
   validates :name, presence: true
 
@@ -12,6 +14,11 @@ class Team < ApplicationRecord
   def set_default_elo
     self.elo_cache = starting_elo || 1000
     self.previous_elo = starting_elo || 1000
+    save
+  end
+
+  def set_param_name
+    self.param_name = Team.param_name(name)
     save
   end
 
@@ -90,6 +97,11 @@ class Team < ApplicationRecord
 
   def initials
     name.split(/ /).map(&:first).join
+  end
+
+  # Using this 'slug' to find teams with similar names
+  def self.param_name(input_name)
+    input_name.sub(/'/, '').sub(/"/, '').parameterize.sub(/^the-/, '')
   end
 
   # Expects Array of Hashes like { team: team_obj, wins: 7, losses: 1 }

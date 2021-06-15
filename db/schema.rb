@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_09_041320) do
+ActiveRecord::Schema.define(version: 2021_04_26_011523) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,8 @@ ActiveRecord::Schema.define(version: 2021_04_09_041320) do
     t.string "time"
     t.bigint "season_id"
     t.text "final_standings"
+    t.integer "league_apps_site_id"
+    t.integer "league_apps_program_id"
     t.index ["season_id"], name: "index_divisions_on_season_id"
   end
 
@@ -106,6 +108,7 @@ ActiveRecord::Schema.define(version: 2021_04_09_041320) do
     t.float "multiplier", default: 1.0, null: false
     t.bigint "tournament_round_id"
     t.integer "tournament_order"
+    t.integer "league_apps_game_id"
     t.index ["court_id"], name: "index_matches_on_court_id"
     t.index ["division_id"], name: "index_matches_on_division_id"
     t.index ["tournament_round_id"], name: "index_matches_on_tournament_round_id"
@@ -118,6 +121,8 @@ ActiveRecord::Schema.define(version: 2021_04_09_041320) do
     t.date "banquet_date"
     t.integer "champion_id"
     t.text "report"
+    t.bigint "location_id"
+    t.index ["location_id"], name: "index_seasons_on_location_id"
   end
 
   create_table "teams", force: :cascade do |t|
@@ -134,6 +139,9 @@ ActiveRecord::Schema.define(version: 2021_04_09_041320) do
     t.integer "starting_wins", default: 0
     t.integer "starting_losses", default: 0
     t.string "country"
+    t.bigint "location_id"
+    t.string "param_name"
+    t.index ["location_id"], name: "index_teams_on_location_id"
   end
 
   create_table "tournament_groups", force: :cascade do |t|
